@@ -151,7 +151,7 @@ Function Invoke-SetupOffice365($Office365ConfigFile) {
         Start-BitsTransfer -Source "$Office365Setup_URL/officedeploymenttool_18730-20142.exe" -Destination "$SaRA_DIR\officedeploymenttool_18730-20142.exe"
         Start-BitsTransfer -Source "$Office365ConfigFile" -Destination "$SaRA_DIR\config.xml"
         Write-Host "Executing Office365 Setup ..."
-        $OfficeSetup = Start-Process -FilePath "$SaRA_DIR\setup.exe" -ArgumentList "/configure $SaRA_DIR\config.xml" -Wait -PassThru -NoNewWindow 
+        $OfficeSetup = Start-Process -FilePath "$SaRA_DIR\officedeploymenttool_18730-20142.exe" -ArgumentList "/configure $SaRA_DIR\config.xml" -Wait -PassThru -NoNewWindow 
         switch ($OfficeSetup.ExitCode) {
             0 {
                 Write-Host "Install successful!"
