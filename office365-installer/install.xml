@@ -10,5 +10,7 @@
       <ExcludeApp ID="Bing" />
     </Product>
   </Add>
+  <Remove All="TRUE" />
+  <RemoveMSI />
   <Display Level="Full" AcceptEULA="TRUE" />
 </Configuration>
