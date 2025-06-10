@@ -46,7 +46,7 @@ $SaRA_URL = "https://aka.ms/SaRA_CommandLineVersionFiles"
 $SaRA_ZIP = "$env:TEMP\SaRA.zip"
 $SaRA_DIR = "$env:TEMP\SaRA"
 $SaRA_EXE = "$SaRA_DIR\SaRAcmd.exe"
-$Office365Setup_URL = "https://github.com/aleschro/msoffice-removal-tool/raw/main/office365-installer"
+$Office365Setup_URL = "https://github.com/aleschro/msoffice-removal-tool-IMALifeNA/raw/main/office365-installer"
 #-----------------------------------------------------------[Functions]------------------------------------------------------------
 Function Invoke-OfficeUninstall {
     if (-Not (Test-Path "$SaRA_DIR")) {
@@ -151,7 +151,7 @@ Function Invoke-SetupOffice365($Office365ConfigFile) {
         Start-BitsTransfer -Source "$Office365Setup_URL/officedeploymenttool_18730-20142.exe" -Destination "$SaRA_DIR\officedeploymenttool_18730-20142.exe"
         Start-BitsTransfer -Source "$Office365ConfigFile" -Destination "$SaRA_DIR\config.xml"
         Write-Host "Executing Office365 Setup ..."
-        $OfficeSetup = Start-Process -FilePath "$SaRA_DIR\officedeploymenttool_18730-20142.exe" -ArgumentList "/configure $SaRA_DIR\config.xml" -Wait -PassThru -NoNewWindow 
+        $OfficeSetup = Start-Process -FilePath "$SaRA_DIR\setup.exe" -ArgumentList "/configure $SaRA_DIR\config.xml" -Wait -PassThru -NoNewWindow 
         switch ($OfficeSetup.ExitCode) {
             0 {
                 Write-Host "Install successful!"
