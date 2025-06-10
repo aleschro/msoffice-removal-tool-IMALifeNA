@@ -1,28 +1,19 @@
-<Configuration ID="A9B3AC9B-7436-4348-AFD5-8769F4D06A4A" >
-  <Add>
+<Configuration ID="c7d09751-04a4-4eab-8323-b56e932868c1">
+  <Info Description="" />
+  <Add OfficeClientEdition="64" Channel="SemiAnnual" MigrateArch="TRUE">
     <Product ID="O365ProPlusRetail">
-      <Language ID="MatchOS"/>
-      <Language ID="MatchPreviousMSI"/>
-      <ExcludeApp ID="Groove"/>
+      <Language ID="en-us" />
+      <ExcludeApp ID="Access" />
+      <ExcludeApp ID="Groove" />
       <ExcludeApp ID="Lync" />
-	  <ExcludeApp ID="Publisher" />
-	  <ExcludeApp ID="Access" />
-    </Product>
-    <Product ID="VisioProRetail" MSICondition="VisPro,VisProR">
-      <Language ID="MatchOS"/>
-      <Language ID="MatchPreviousMSI"/>
-      <ExcludeApp ID="Groove"/>
-      <ExcludeApp ID="Lync" />
-	  <ExcludeApp ID="Publisher" />
-	  <ExcludeApp ID="Access" />
-    </Product>
-    <Product ID="ProjectProRetail" MSICondition="PrjPro,PrjProR">
-      <Language ID="MatchOS"/>
-      <Language ID="MatchPreviousMSI"/>
-      <ExcludeApp ID="Groove"/>
-      <ExcludeApp ID="Lync" />
-	  <ExcludeApp ID="Publisher" />
-	  <ExcludeApp ID="Access" />
+      <ExcludeApp ID="Publisher" />
+      <ExcludeApp ID="Bing" />
     </Product>
   </Add>
+  <Updates Enabled="TRUE" />
+  <RemoveMSI />
+  <AppSettings>
+    <Setup Name="Company" Value="IMA Life North America" />
+  </AppSettings>
+  <Display Level="Full" AcceptEULA="TRUE" />
 </Configuration>
